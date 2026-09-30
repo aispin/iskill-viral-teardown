@@ -23,14 +23,14 @@ description: 当用户想拆解/分析一条爆款短视频、问「这条为什
 
    ```bash
    cd /Users/lv/.workbuddy/skills/iskill-media-transcribe
-   WEIXIN_COOKIE_FILE=/Users/lv/WorkBuddy/ISkills/.workbuddy/weixin_cookies.txt \
-     node scripts/video-transcribe.mjs one "<URL或文件>" --weixin --out ./out
+   node scripts/video-transcribe.mjs one "<URL或文件>" --weixin --out ./out
    ```
 
    - 微信视频号链接（`weixin.qq.com/sph/…`）**必须带 `--weixin` 和元宝 cookie**。
-     cookie 文件缺失或 403 时，配方：Chrome 登录 https://yuanbao.tencent.com 后执行
-     `yt-dlp --cookies-from-browser chrome --cookies <工作区路径>/weixin_cookies.txt https://example.com`
-     （cookie 放工作区，别放 /tmp——沙箱会拦 /tmp 读取）。
+     脚本按此顺序找 cookie：`$WEIXIN_COOKIE_FILE` → `~/.iskill-weixin-cookies.txt`（推荐，用户级跨 agent）→ `./weixin_cookies.txt`。
+     cookie 缺失或 403 时的导出配方：Chrome 登录 https://yuanbao.tencent.com 后执行
+     `yt-dlp --cookies-from-browser chrome --cookies ~/.iskill-weixin-cookies.txt https://example.com`
+     （cookie 存用户主目录，别放 /tmp——沙箱会拦 /tmp 读取）。
 2. 得到逐字稿（`*.json` 的 `text` 字段；有 srt 则更佳，可拿分段时间点）。
 3. 已有产物（out 目录已存在同 id 文件）就**直接复用，不要重跑**；确要重跑加 `--force`。
 
