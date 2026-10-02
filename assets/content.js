@@ -37,16 +37,19 @@ window.PROMO = {
         meta2: "复用本地转写",
         meta3: "五维拆解"
       },
-      terminal: {
-        title: "zsh — iskill-viral-teardown",
-        lines: [
-          [{ t: "$ ", c: "p" }, { t: "帮我拆这条视频 https://weixin.qq.com/sph/xxxx", c: "k" }],
-          [{ t: "✓ ", c: "p" }, { t: "取逐字稿 1,842 字 · 时长 47s", c: "s" }],
-          [{ t: "【钩子】", c: "s" }, { t: "「别再这样拍农村视频了」— 反常识 ｜ 前 3s", c: "c" }],
-          [{ t: "【结构】", c: "s" }, { t: "钩子 0-4s → 痛点 4-15s → 3 个论点 15-38s → CTA 38-47s", c: "c" }],
-          [{ t: "✓ ", c: "p" }, { t: "报告：viral-video-team-output/拆解/…-拆解.md", c: "s" }]
+      chat: {
+        title: "AI Agent · 对话现场",
+        status: "在线",
+        userLabel: "你",
+        agentLabel: "AI",
+        messages: [
+          { role: "user", text: "帮我拆这条爆款视频：它为什么火" },
+          { role: "agent", text: "先取逐字稿（复用 iskill-media-transcribe，本地转写不外传），再拆结构、情绪线、钩子密度与可复用手法。", tag: "逐字稿 已就绪" },
+          { role: "user", text: "我只给主题，没有链接" },
+          { role: "agent", text: "那就先跑 Step 0 对标搜寻，找 2-3 条候选给你选，选完再深拆。" }
         ]
       },
+
 
       stats: [
         { value: "5 维", label: "拆解维度", note: "开头钩子 / 内容结构 / 爆款归因 / 可复刻打法 / 套用模板" },
@@ -154,16 +157,19 @@ window.PROMO = {
         meta2: "Reuses local transcription",
         meta3: "Five dimensions"
       },
-      terminal: {
-        title: "zsh — iskill-viral-teardown",
-        lines: [
-          [{ t: "$ ", c: "p" }, { t: "tear down this video https://weixin.qq.com/sph/xxxx", c: "k" }],
-          [{ t: "✓ ", c: "p" }, { t: "transcript 1,842 chars · 47s", c: "s" }],
-          [{ t: "[hook]", c: "s" }, { t: "\"Stop filming countryside videos like this\" — counter-intuitive | first 3s", c: "c" }],
-          [{ t: "[structure]", c: "s" }, { t: "hook 0-4s → pain 4-15s → 3 points 15-38s → CTA 38-47s", c: "c" }],
-          [{ t: "✓ ", c: "p" }, { t: "report: viral-video-team-output/拆解/…-拆解.md", c: "s" }]
+      chat: {
+        title: "AI Agent · live session",
+        status: "online",
+        userLabel: "You",
+        agentLabel: "AI",
+        messages: [
+          { role: "user", text: "Break down this viral video — why did it work?" },
+          { role: "agent", text: "Transcript first (reusing iskill-media-transcribe, transcribed locally, nothing uploaded), then structure, emotional arc, hook density and reusable techniques.", tag: "transcript ready" },
+          { role: "user", text: "I only have a topic, no link" },
+          { role: "agent", text: "Then Step 0: benchmark search. I'll surface 2-3 candidates, you pick one, and I take it apart." }
         ]
       },
+
 
       stats: [
         { value: "5", label: "teardown dimensions", note: "opening hook / structure / viral cause / replicable tactics / fill-in template" },
