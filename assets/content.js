@@ -101,27 +101,14 @@ window.PROMO = {
       steps: {
         eyebrow: "上手",
         title: "三步跑起来",
-        sub: "",
+        sub: "命令由 agent 跑，你只说要什么、看结果。",
         items: [
-          {
-            title: "交给 AI 装",
-            desc: "把提示词粘进对话框，agent 会自己拉代码、读文档，再告诉你怎么用。",
-            codeKey: "install"
-          },
-          {
-            title: "取逐字稿（复用成品）",
-            desc: "在 iskill-media-transcribe 目录里跑；视频号链接加 --weixin 与元宝 cookie，已有产物会直接复用。",
-            codeName: "bash",
-            code: 'node scripts/video-transcribe.mjs one "<URL或文件>" --weixin --out ./out'
-          },
-          {
-            title: "交给它拆",
-            desc: "拿到逐字稿后，按五维出报告，写进工作区的拆解目录。",
-            codeName: "prompt",
-            code: "拆一下这条视频，重点看开头钩子、内容结构和可复刻的打法"
-          }
+          { title: "交给 AI 装", desc: "把这句话粘进对话框，agent 会自己拉代码、读文档，再告诉你用法。", codeKey: "install" },
+          { title: "给链接或主题", desc: "没有链接也行，给主题它会先找几条对标让你选；转写复用 media-transcribe，全本地。", codeName: "prompt", code: "帮我拆这条爆款视频：它为什么火，结构怎么搭的，我能抄什么。" },
+          { title: "看拆解报告", desc: "报告直接回在对话里（也会落盘）；挑一条能用的手法，再让它照着写稿。" }
         ]
       },
+
 
       faq: {
         eyebrow: "问答",
@@ -231,27 +218,14 @@ window.PROMO = {
       steps: {
         eyebrow: "Get started",
         title: "Up and running in three steps",
-        sub: "",
+        sub: "The agent runs the commands. You say what you want and check the result.",
         items: [
-          {
-            title: "Let your agent install it",
-            desc: "Paste the line into the chat — it clones the repo, reads the docs, and tells you how to use it.",
-            codeKey: "install"
-          },
-          {
-            title: "Get the transcript (reusing an existing tool)",
-            desc: "Run this inside iskill-media-transcribe; add --weixin and Yuanbao cookies for Channels links, and existing output is reused rather than rerun.",
-            codeName: "bash",
-            code: 'node scripts/video-transcribe.mjs one "<URL or file>" --weixin --out ./out'
-          },
-          {
-            title: "Hand it over to teardown",
-            desc: "With the transcript in hand it produces the five-dimension report in the workspace's teardown folder.",
-            codeName: "prompt",
-            code: "Tear down this video, focusing on the opening hook, the structure and the replicable tactics"
-          }
+          { title: "Let your agent install it", desc: "Paste the line into the chat — it clones the repo, reads the docs, and tells you how to use it.", codeKey: "install" },
+          { title: "Give a link or a topic", desc: "No link? Give it a topic and it finds a few benchmarks for you to pick from. Transcription reuses media-transcribe, all local.", codeName: "prompt", code: "Break down this viral video: why it worked, how it's structured, and what I can reuse." },
+          { title: "Read the teardown", desc: "The report comes back in chat and gets written to disk. Pick one technique and have it write a script from it." }
         ]
       },
+
 
       faq: {
         eyebrow: "FAQ",
