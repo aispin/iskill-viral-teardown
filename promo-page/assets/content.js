@@ -19,7 +19,7 @@ window.PROMO = {
     zh: {
       meta: {
         title: "ISKILL-VIRAL-TEARDOWN · 爆款视频拆解",
-        description: "甩一条爆款视频链接（含微信视频号），下载转写后拆出开头钩子、内容结构、爆款归因、可复刻打法与套用模板，产出结构化拆解报告。"
+        description: "甩一条爆款视频链接（含微信视频号）、一段分享文案，或直接录屏——自动取逐字稿后拆出开头钩子、内容结构、爆款归因、可复刻打法与套用模板，产出结构化拆解报告。"
       },
       a11y: { skip: "跳到主要内容" },
       ui: { copy: "复制", copied: "已复制", failed: "复制失败" },
@@ -30,10 +30,10 @@ window.PROMO = {
         titlePre: "一条爆款，",
         titleAccent: "拆出可复刻的打法",
         titlePost: "",
-        sub: "甩一条爆款视频链接（含微信视频号），或只给主题先找对标：下载转写后逐维拆出钩子、结构、爆款原因与可复刻打法，产出结构化报告喂给文案生成。",
+        sub: "甩一条爆款视频链接（含微信视频号）、分享文案或录屏，或只给主题先找对标：取到逐字稿后逐维拆出钩子、结构、爆款原因与可复刻打法，产出结构化报告喂给文案生成。",
         ctaPrimary: "复制安装提示词",
         ctaSecondary: "看源码",
-        meta1: "纯提示词",
+        meta1: "零依赖",
         meta2: "复用本地转写",
         meta3: "五维拆解"
       },
@@ -53,7 +53,7 @@ window.PROMO = {
 
       stats: [
         { value: "5 维", label: "拆解维度", note: "开头钩子 / 内容结构 / 爆款归因 / 可复刻打法 / 套用模板" },
-        { value: "0", label: "脚本与依赖", note: "纯提示词；下载与转写复用 iskill-media-transcribe" },
+        { value: "0", label: "第三方依赖", note: "以提示词为主 + 1 个零依赖小脚本（分享文案→URL）；下载与转写复用 iskill-media-transcribe" },
         { value: "3–5s", label: "开头钩子复看窗口", note: "拆前 3-5 秒第一句原话 + 钩子类型" },
         { value: "1 条", label: "一次只拆一条", note: "转写是本地重活，不并发轰炸" }
       ],
@@ -139,7 +139,7 @@ window.PROMO = {
     en: {
       meta: {
         title: "ISKILL-VIRAL-TEARDOWN · Why a viral video worked",
-        description: "Drop in a viral video link (WeChat Channels included) and get a structured teardown: opening hook, content structure, why it went viral, replicable tactics and a fill-in template."
+        description: "Drop in a viral video link (WeChat Channels included), a share snippet, or a screen recording — it gets the transcript, then returns a structured teardown: opening hook, structure, why it went viral, replicable tactics and a fill-in template."
       },
       a11y: { skip: "Skip to content" },
       ui: { copy: "Copy", copied: "Copied", failed: "Copy failed" },
@@ -150,10 +150,10 @@ window.PROMO = {
         titlePre: "From one viral video to ",
         titleAccent: "tactics you can copy",
         titlePost: "",
-        sub: "Drop in a viral video link (WeChat Channels included), or just a topic to find benchmarks first: after downloading and transcribing, it teases out the hook, structure, why it worked and what is replicable, and hands you a structured report for the copywriter.",
+        sub: "Drop in a viral video link (WeChat Channels included), a share snippet or a screen recording, or just a topic to find benchmarks first: once it has the transcript, it teases out the hook, structure, why it worked and what is replicable, and hands you a structured report for the copywriter.",
         ctaPrimary: "Copy install prompt",
         ctaSecondary: "View source",
-        meta1: "Pure prompt",
+        meta1: "Zero deps",
         meta2: "Reuses local transcription",
         meta3: "Five dimensions"
       },
@@ -173,7 +173,7 @@ window.PROMO = {
 
       stats: [
         { value: "5", label: "teardown dimensions", note: "opening hook / structure / viral cause / replicable tactics / fill-in template" },
-        { value: "0", label: "scripts and dependencies", note: "pure prompt; download and transcription reuse iskill-media-transcribe" },
+        { value: "0", label: "third-party dependencies", note: "prompt-first + one zero-dep helper script (share snippet → URL); download and transcription reuse iskill-media-transcribe" },
         { value: "3–5s", label: "hook re-watch window", note: "the first line of the first 3–5 seconds, plus its hook type" },
         { value: "1", label: "video at a time", note: "transcription is heavy local work — no parallel floods" }
       ],
