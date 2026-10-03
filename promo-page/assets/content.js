@@ -19,7 +19,7 @@ window.PROMO = {
     zh: {
       meta: {
         title: "ISKILL-VIRAL-TEARDOWN · 爆款视频拆解",
-        description: "甩一条爆款视频链接（含微信视频号）、一段分享文案，或直接录屏——自动取逐字稿后拆出开头钩子、内容结构、爆款归因、可复刻打法与套用模板，产出结构化拆解报告。"
+        description: "甩一条爆款视频链接（含微信视频号）、一段分享文案，或直接录屏——自动取逐字稿后拆出开头钩子、内容结构、爆款归因、可复刻打法与套用模板，产出结构化拆解报告。带跨天累积的拆解库，同一条视频已拆过直接复用。"
       },
       a11y: { skip: "跳到主要内容" },
       ui: { copy: "复制", copied: "已复制", failed: "复制失败" },
@@ -30,7 +30,7 @@ window.PROMO = {
         titlePre: "一条爆款，",
         titleAccent: "拆出可复刻的打法",
         titlePost: "",
-        sub: "甩一条爆款视频链接（含微信视频号）、分享文案或录屏，或只给主题先找对标：取到逐字稿后逐维拆出钩子、结构、爆款原因与可复刻打法，产出结构化报告喂给文案生成。",
+        sub: "甩一条爆款视频链接（含微信视频号）、分享文案或录屏，或只给主题先找对标：取到逐字稿后逐维拆出钩子、结构、爆款原因与可复刻打法，产出结构化报告喂给文案生成；同一条已拆过的直接复用。",
         ctaPrimary: "复制安装提示词",
         ctaSecondary: "看源码",
         meta1: "零依赖",
@@ -44,7 +44,7 @@ window.PROMO = {
         agentLabel: "AI",
         messages: [
           { role: "user", text: "帮我拆这条爆款视频：它为什么火" },
-          { role: "agent", text: "先取逐字稿（复用 iskill-media-transcribe，本地转写不外传），再拆结构、情绪线、钩子密度与可复用手法。", tag: "逐字稿 已就绪" },
+          { role: "agent", text: "先查了拆解库，这条没拆过；取逐字稿（复用 iskill-media-transcribe，本地转写不外传），再拆结构、情绪线、钩子密度与可复用手法。", tag: "逐字稿 已就绪" },
           { role: "user", text: "我只给主题，没有链接" },
           { role: "agent", text: "那就先跑 Step 0 对标搜寻，找 2-3 条候选给你选，选完再深拆。" }
         ]
@@ -67,6 +67,7 @@ window.PROMO = {
           items: [
             "刷到百万赞视频，说不出它到底赢在哪",
             "想抄又怕抄歪，结构记不住、金句抄不全",
+            "同一条视频翻来覆去重拆，浪费一轮转写",
             "凭印象总结，容易脑补视频里其实没有的内容"
           ]
         },
@@ -75,6 +76,7 @@ window.PROMO = {
           items: [
             "先拿逐字稿，开头钩子引用原句、标出钩子类型",
             "分段大纲标时间点与时长占比，结构一眼看清",
+            "拆前查拆解库，同一条已拆过直接复用、不重跑",
             "归因 / 可复刻打法 / 套用模板三层抽象，直接给下游文案套"
           ]
         }
@@ -87,10 +89,11 @@ window.PROMO = {
         items: [
           { icon: "bolt", title: "Step 0 对标搜寻", desc: "只给主题没给链接时，多角度 WebSearch 挖 2-3 条候选（标题 + 链接 + 热度 + 为什么值得参考），<b>停下让你选</b>，不硬凑。" },
           { icon: "camera", title: "下载 + 转写交给成品", desc: "复用 <code>iskill-media-transcribe</code> 一条命令取逐字稿；已有产物直接复用、不重跑 —— 本 skill 只做「拆」，不重造轮子。" },
+          { icon: "layers", title: "跨天累积拆解库", desc: "维护 <code>拆解/TEARDOWN-INDEX.md</code>：拆前按链接/标题查库，同一条已拆过<b>直接复用报告、不重跑转写</b>；拆完回写库，方便回头找以前拆过的那条。" },
           { icon: "lang", title: "视频号也支持", desc: "微信视频号 <code>weixin.qq.com/sph/…</code> 走 <code>--weixin</code> + 元宝 cookie；脚本按 <code>$WEIXIN_COOKIE_FILE</code> → <code>~/.iskill-weixin-cookies.txt</code> → <code>./weixin_cookies.txt</code> 的顺序找。" },
           { icon: "grid", title: "五维拆解", desc: "开头钩子（原句 + 类型）/ 内容结构（分段大纲 + 时长占比）/ 爆款归因 / 可复刻打法 / 套用模板，逐维输出。" },
           { icon: "check", title: "基于原文，拒绝脑补", desc: "必须引用逐字稿原句作证据；拿不到画面时明确标注「仅基于音频逐字稿拆解，画面/剪辑维度缺失」。" },
-          { icon: "layers", title: "直接喂给下游", desc: "报告里的「套用模板」是 iskill-viral-copywriter 的可选输入；转写产物路径（mp4/mp3/srt/json）列在报告头部，方便回看原片。" }
+          { icon: "arrow", title: "直接喂给下游", desc: "报告里的「套用模板」是 iskill-viral-copywriter 的可选输入；转写产物路径（mp4/mp3/srt/json）列在报告头部，方便回看原片。" }
         ]
       },
 
@@ -108,7 +111,7 @@ window.PROMO = {
         items: [
           { title: "交给 AI 装", desc: "把这句话粘进对话框，agent 会自己拉代码、读文档，再告诉你用法。", codeKey: "install" },
           { title: "给链接或主题", desc: "没有链接也行，给主题它会先找几条对标让你选；转写复用 media-transcribe，全本地。", codeName: "prompt", code: "帮我拆这条爆款视频：它为什么火，结构怎么搭的，我能抄什么。" },
-          { title: "看拆解报告", desc: "报告直接回在对话里（也会落盘）；挑一条能用的手法，再让它照着写稿。" }
+          { title: "看拆解报告", desc: "报告直接回在对话里（也会落盘、并回写拆解库）；挑一条能用的手法，再让它照着写稿。" }
         ]
       },
 
@@ -119,6 +122,7 @@ window.PROMO = {
         items: [
           { q: "Windows / Linux 上能跑吗？", a: "拆解本身是纯提示词，任何平台都能用。但<b>取料这一步复用的 <code>iskill-media-transcribe</code> 目前只在 macOS 跑得通</b>（其下载/转写链依赖 macOS 专属命令与写死路径），所以在 Windows / Linux 上你需要自己先拿到逐字稿 / 字幕再交给它拆。macOS 上则是全自动一条龙。" },
           { q: "一定要给链接吗？", a: "不一定。只给主题也行 —— Step 0 会先多角度 WebSearch 挖 2-3 条候选（标题 + 链接 + 热度 + 为什么值得参考），<b>停下来让你选一条</b>再进入下载拆解；搜出来太水时会如实告知，不硬凑。" },
+          { q: "同一条视频会重复拆吗？", a: "不会。拆前先按链接 / 标题查拆解库 <code>拆解/TEARDOWN-INDEX.md</code>，命中就直接复用已有报告；只有报告已删或内容明显过时才重拆。" },
           { q: "视频号链接打不开怎么办？", a: "视频号是封闭生态，需要元宝登录态 cookie：Chrome 登录 <code>https://yuanbao.tencent.com</code> 后导出 <code>~/.iskill-weixin-cookies.txt</code>（<code>wx.qq.com</code> 网页版登录无效）。如果链接本身是过期 / 限流的分享链接，请从视频号 App 里重新转发一条。" },
           { q: "一次能拆几条？", a: "一次只拆一条。转写是本地重活，批量建议逐条出报告，别并发轰炸。" },
           { q: "拆解会不会编造视频里没有的内容？", a: "不会。铁律是<b>只依据逐字稿原文引用证据</b>，禁止脑补；拿不到画面信息时会明确标注「仅基于音频逐字稿拆解，画面/剪辑维度缺失」。" },
@@ -139,7 +143,7 @@ window.PROMO = {
     en: {
       meta: {
         title: "ISKILL-VIRAL-TEARDOWN · Why a viral video worked",
-        description: "Drop in a viral video link (WeChat Channels included), a share snippet, or a screen recording — it gets the transcript, then returns a structured teardown: opening hook, structure, why it went viral, replicable tactics and a fill-in template."
+        description: "Drop in a viral video link (WeChat Channels included), a share snippet, or a screen recording — it gets the transcript, then returns a structured teardown: opening hook, structure, why it went viral, replicable tactics and a fill-in template. A cross-day teardown library means a video already analysed is reused, not rerun."
       },
       a11y: { skip: "Skip to content" },
       ui: { copy: "Copy", copied: "Copied", failed: "Copy failed" },
@@ -150,7 +154,7 @@ window.PROMO = {
         titlePre: "From one viral video to ",
         titleAccent: "tactics you can copy",
         titlePost: "",
-        sub: "Drop in a viral video link (WeChat Channels included), a share snippet or a screen recording, or just a topic to find benchmarks first: once it has the transcript, it teases out the hook, structure, why it worked and what is replicable, and hands you a structured report for the copywriter.",
+        sub: "Drop in a viral video link (WeChat Channels included), a share snippet or a screen recording, or just a topic to find benchmarks first: once it has the transcript, it teases out the hook, structure, why it worked and what is replicable, and hands you a structured report for the copywriter; a video already analysed is reused.",
         ctaPrimary: "Copy install prompt",
         ctaSecondary: "View source",
         meta1: "Zero deps",
@@ -164,7 +168,7 @@ window.PROMO = {
         agentLabel: "AI",
         messages: [
           { role: "user", text: "Break down this viral video — why did it work?" },
-          { role: "agent", text: "Transcript first (reusing iskill-media-transcribe, transcribed locally, nothing uploaded), then structure, emotional arc, hook density and reusable techniques.", tag: "transcript ready" },
+          { role: "agent", text: "Checked the teardown library first — this one is new. Transcript next (reusing iskill-media-transcribe, transcribed locally, nothing uploaded), then structure, emotional arc, hook density and reusable techniques.", tag: "transcript ready" },
           { role: "user", text: "I only have a topic, no link" },
           { role: "agent", text: "Then Step 0: benchmark search. I'll surface 2-3 candidates, you pick one, and I take it apart." }
         ]
@@ -187,6 +191,7 @@ window.PROMO = {
           items: [
             "A million-like video, and you cannot say what actually won",
             "You want to copy it but the structure slips away and the key lines are half-remembered",
+            "The same video torn down again and again, wasting a whole transcription pass",
             "Summarising from memory invites inventing things the video never said"
           ]
         },
@@ -195,6 +200,7 @@ window.PROMO = {
           items: [
             "With a transcript, the hook is quoted verbatim and typed",
             "A sectioned outline with timestamps and share-of-duration makes the structure visible",
+            "The teardown library is checked first — an analysed video is reused, not rerun",
             "Cause, replicable tactics and a template — three layers of abstraction the copywriter can use directly"
           ]
         }
@@ -207,10 +213,11 @@ window.PROMO = {
         items: [
           { icon: "bolt", title: "Step 0 benchmark search", desc: "With only a topic and no link, it searches multiple angles for 2–3 candidates (title + link + heat + why it is worth studying) and <b>stops for you to pick</b> — no padding it out." },
           { icon: "camera", title: "Download and transcription are reused", desc: "It calls <code>iskill-media-transcribe</code> for a one-command transcript and reuses existing output instead of rerunning — this skill only tears down, it does not rebuild the wheel." },
+          { icon: "layers", title: "Cross-day teardown library", desc: "Keeps <code>拆解/TEARDOWN-INDEX.md</code>: before tearing down it checks the library by link/title and <b>reuses the existing report instead of rerunning transcription</b>; afterwards the library is updated so past teardowns are easy to find again." },
           { icon: "lang", title: "WeChat Channels included", desc: "Channels links (<code>weixin.qq.com/sph/…</code>) go through <code>--weixin</code> plus Yuanbao cookies; the script looks in the order <code>$WEIXIN_COOKIE_FILE</code> → <code>~/.iskill-weixin-cookies.txt</code> → <code>./weixin_cookies.txt</code>." },
           { icon: "grid", title: "Five-dimension teardown", desc: "Opening hook (verbatim line plus type) / content structure (sectioned outline with duration share) / why it went viral / replicable tactics / fill-in template, delivered dimension by dimension." },
           { icon: "check", title: "Grounded in the transcript", desc: "Evidence must be quoted from the transcript; when visuals are unavailable it states plainly that the teardown is audio-only and the visual/editing dimensions are missing." },
-          { icon: "layers", title: "Feeds the next step", desc: "The report's \"fill-in template\" is an optional input for iskill-viral-copywriter; the paths of the downloaded media and transcript (mp4/mp3/srt/json) sit at the top of the report for easy re-watching." }
+          { icon: "arrow", title: "Feeds the next step", desc: "The report's \"fill-in template\" is an optional input for iskill-viral-copywriter; the paths of the downloaded media and transcript (mp4/mp3/srt/json) sit at the top of the report for easy re-watching." }
         ]
       },
 
@@ -228,7 +235,7 @@ window.PROMO = {
         items: [
           { title: "Let your agent install it", desc: "Paste the line into the chat — it clones the repo, reads the docs, and tells you how to use it.", codeKey: "install" },
           { title: "Give a link or a topic", desc: "No link? Give it a topic and it finds a few benchmarks for you to pick from. Transcription reuses media-transcribe, all local.", codeName: "prompt", code: "Break down this viral video: why it worked, how it's structured, and what I can reuse." },
-          { title: "Read the teardown", desc: "The report comes back in chat and gets written to disk. Pick one technique and have it write a script from it." }
+          { title: "Read the teardown", desc: "The report comes back in chat and gets written to disk (and to the library). Pick one technique and have it write a script from it." }
         ]
       },
 
@@ -239,6 +246,7 @@ window.PROMO = {
         items: [
           { q: "Does it run on Windows / Linux?", a: "The teardown itself is pure prompt and works anywhere. But <b>the material-gathering step reuses <code>iskill-media-transcribe</code>, which currently only runs on macOS</b> (its download/transcription chain depends on macOS-specific commands and hard-coded paths). So on Windows / Linux you need to obtain a transcript or subtitles yourself first and hand that over; on macOS it is a single automated chain." },
           { q: "Do I have to provide a link?", a: "No. A topic alone works — Step 0 searches multiple angles for 2–3 candidates (title + link + heat + why it is worth studying) and <b>stops for you to choose one</b> before downloading. If results are thin it says so rather than padding them out." },
+          { q: "Will it tear down the same video twice?", a: "No. Before starting it checks the teardown library at <code>拆解/TEARDOWN-INDEX.md</code> by link/title; a hit reuses the existing report, and only a deleted or clearly stale report triggers a rerun." },
           { q: "What if a Channels link will not open?", a: "Channels is a closed ecosystem and needs Yuanbao login cookies: sign in at <code>https://yuanbao.tencent.com</code> in Chrome and export <code>~/.iskill-weixin-cookies.txt</code> (the <code>wx.qq.com</code> web login does not work). If the link itself is expired or rate-limited, re-forward a fresh one from the Channels app." },
           { q: "How many videos can it teardown at once?", a: "One at a time. Transcription is heavy local work, so for batches produce one report each rather than flooding it." },
           { q: "Will it invent things the video never said?", a: "No. The rule is to <b>quote evidence only from the transcript</b>, never to fill gaps. When visual information is unavailable it labels the report as audio-only with the visual/editing dimensions missing." },
