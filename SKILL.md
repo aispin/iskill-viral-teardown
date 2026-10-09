@@ -135,3 +135,15 @@ description: 当用户想拆解/分析一条爆款短视频、问「这条为什
 - 走到契约 ⑤（无任何素材）时，报告顶部**强制标注「无逐字稿，非真实拆解」**，且不得产出钩子/结构等需引用原句的维度。
 - 一次只拆一条；批量拆解建议逐条出报告（转写是本地重活，别并发轰炸）。
 - **拆解库跨天累积**：拆前必查（Step 0.5）、拆后必写（Step 3）；同一条视频（URL/标题命中）默认复用，不重跑转写。
+
+## 依赖同步
+
+本仓库 `promo-page/assets/{app.js,style.css,icons.js}` 是 [iskill-promo-page](https://github.com/aispin/iskill-promo-page)
+模板引擎的 vendored 副本（锁定版本见 `package.json` 的 `iskillDeps`），**不要手改**——
+去真源仓库改并升 `@iskill-version`，再用 iskill-dep-sync 同步回来（本机无该工具时按下面自举）：
+
+```bash
+T="$HOME/.workbuddy/skills/iskill-dep-sync/scripts/skill-deps.mjs"
+[ -f "$T" ] || { TMP="$(mktemp -d)"; curl -fsSL "https://raw.githubusercontent.com/aispin/iskill-dep-sync/HEAD/scripts/skill-deps.mjs" -o "$TMP/skill-deps.mjs"; T="$TMP/skill-deps.mjs"; }
+node "$T" check "$(pwd)"     # 漂移检测；node "$T" sync "$(pwd)" 恢复/升级；node "$T" env "$(pwd)" 冷启动自检
+```
